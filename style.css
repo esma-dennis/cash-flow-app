@@ -1,0 +1,341 @@
+:root {
+  --bg: #f3f6f8;
+  --card: #fff;
+  --ink: #14212b;
+  --mute: #6b7a86;
+  --line: #dde4e9;
+  --in: #0f8a6d;
+  --out: #d6453d;
+  --acc: #14212b;
+  --accink: #fff;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #10171d;
+    --card: #1a242c;
+    --ink: #e8eef2;
+    --mute: #8fa0ac;
+    --line: #2b3842;
+    --in: #3cc4a1;
+    --out: #ff7b72;
+    --acc: #e8eef2;
+    --accink: #10171d;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #10171d;
+  --card: #1a242c;
+  --ink: #e8eef2;
+  --mute: #8fa0ac;
+  --line: #2b3842;
+  --in: #3cc4a1;
+  --out: #ff7b72;
+  --acc: #e8eef2;
+  --accink: #10171d;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-padding-top: env(safe-area-inset-top, 0px);
+}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font:
+    16px/1.4 system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
+}
+main {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 16px 16px 96px;
+}
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+.top button {
+  background: none;
+  border: 1px solid var(--line);
+  color: var(--ink);
+  border-radius: 10px;
+  width: 40px;
+  height: 40px;
+  font-size: 18px;
+}
+.month {
+  font-weight: 600;
+  font-size: 17px;
+}
+.bal {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 20px;
+}
+.bal small {
+  color: var(--mute);
+}
+.bal .n {
+  font-size: 38px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 2px 0 14px;
+}
+.row2 {
+  display: flex;
+  gap: 12px;
+}
+.row2 > div {
+  flex: 1;
+}
+.in {
+  color: var(--in);
+}
+.out {
+  color: var(--out);
+}
+.row2 b {
+  display: block;
+  font-size: 18px;
+}
+h2 {
+  font-size: 15px;
+  margin: 24px 0 8px;
+  color: var(--mute);
+  font-weight: 600;
+}
+.cat {
+  margin: 8px 0;
+}
+.cat .l {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+.bar {
+  height: 6px;
+  background: var(--line);
+  border-radius: 3px;
+  margin-top: 4px;
+  overflow: hidden;
+}
+.bar i {
+  display: block;
+  height: 100%;
+  background: var(--out);
+}
+.item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+}
+.item .d {
+  flex: 1;
+  min-width: 0;
+}
+.item .d div {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.item .d small {
+  color: var(--mute);
+}
+.item .a {
+  font-weight: 600;
+}
+.item .x {
+  background: none;
+  border: 0;
+  color: var(--mute);
+  font-size: 20px;
+  padding: 4px 8px;
+}
+.empty {
+  color: var(--mute);
+  padding: 16px 0;
+}
+.fab {
+  position: fixed;
+  right: 16px;
+  bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+  background: var(--acc);
+  color: var(--accink);
+  border: 0;
+  border-radius: 28px;
+  padding: 16px 22px;
+  font-size: 16px;
+  font-weight: 600;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+}
+dialog {
+  border: 0;
+  border-radius: 18px;
+  padding: 20px;
+  width: calc(100% - 32px);
+  max-width: 440px;
+  background: var(--card);
+  color: var(--ink);
+}
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.45);
+}
+.seg {
+  display: flex;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+.seg button {
+  flex: 1;
+  padding: 12px;
+  border: 0;
+  background: none;
+  color: var(--ink);
+  font-size: 15px;
+}
+.seg button.on {
+  background: var(--acc);
+  color: var(--accink);
+}
+label {
+  display: block;
+  font-size: 13px;
+  color: var(--mute);
+  margin: 10px 0 4px;
+}
+input,
+select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--bg);
+  color: var(--ink);
+  font-size: 16px;
+}
+.act {
+  display: flex;
+  gap: 8px;
+  margin-top: 16px;
+}
+.act button {
+  flex: 1;
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: none;
+  color: var(--ink);
+  font-size: 16px;
+}
+.act .go {
+  background: var(--acc);
+  color: var(--accink);
+  border-color: var(--acc);
+  font-weight: 600;
+}
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--in);
+  outline-offset: 2px;
+}
+body {
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+.hd {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.hd h1,
+.month {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 8px 14px;
+  margin: 0;
+  font-size: 17px;
+}
+.top button,
+.hd button {
+  background: var(--card);
+}
+.hd button {
+  border: 1px solid var(--line);
+  color: var(--ink);
+  border-radius: 10px;
+  width: 40px;
+  height: 40px;
+  font-size: 18px;
+}
+.panel {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 4px 16px 8px;
+  margin-top: 16px;
+}
+.panel h2 {
+  margin: 14px 0 8px;
+}
+.sw {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.sw button {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  padding: 0;
+}
+.sw.wp button {
+  border-radius: 10px;
+  width: 52px;
+  height: 38px;
+  font-size: 11px;
+  color: var(--ink);
+}
+.sw button.on {
+  outline: 3px solid var(--ink);
+  outline-offset: 2px;
+}
+.mini {
+  width: auto !important;
+  padding: 0 12px !important;
+  border-radius: 10px !important;
+  background: none;
+  color: var(--ink);
+}
+.day {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 14px 0 4px;
+  font-weight: 600;
+  font-size: 14px;
+  border-bottom: 2px solid var(--line);
+}
+.day + .item {
+  border-top: 0;
+}

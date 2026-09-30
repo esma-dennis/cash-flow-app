@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <title>My Money</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <div class="hd">
+        <h1 id="hello">My Money</h1>
+        <button id="gear" aria-label="Settings">⚙</button>
+      </div>
+      <div class="top">
+        <button id="prev" aria-label="Previous month">‹</button>
+        <div class="month" id="mLabel"></div>
+        <button id="next" aria-label="Next month">›</button>
+      </div>
+      <section class="bal">
+        <small>Balance this month</small>
+        <div class="n" id="bal"></div>
+        <div class="row2">
+          <div><small>Income</small><b class="in" id="inc"></b></div>
+          <div><small>Spent</small><b class="out" id="exp"></b></div>
+        </div>
+      </section>
+      <div class="panel">
+        <h2>Spending by category</h2>
+        <div id="cats"></div>
+        <h2>Transactions</h2>
+        <div id="list"></div>
+      </div>
+    </main>
+    <button class="fab" id="add">+ Add</button>
+    <dialog id="dlg">
+      <div class="seg">
+        <button id="tOut" class="on">Expense</button
+        ><button id="tIn">Income</button>
+      </div>
+      <label for="amt">Amount (RM)</label
+      ><input
+        id="amt"
+        type="number"
+        inputmode="decimal"
+        step="0.01"
+        min="0"
+        placeholder="0.00"
+      />
+      <label for="cat">Category</label
+      ><select id="cat"></select>
+      <label for="note">Note (optional)</label
+      ><input id="note" type="text" maxlength="60" />
+      <label for="date">Date</label><input id="date" type="date" />
+      <div class="act">
+        <button id="cancel">Cancel</button
+        ><button class="go" id="save">Save</button>
+      </div>
+    </dialog>
+    <dialog id="set">
+      <label for="uname">Your name</label
+      ><input id="uname" type="text" maxlength="24" placeholder="e.g. Esma" />
+      <label>Colour</label>
+      <div class="sw" id="accSw"></div>
+      <label>Wallpaper</label>
+      <div class="sw wp" id="wpSw"></div>
+      <div class="sw" style="margin-top: 10px">
+        <button class="mini" id="pick">Choose photo</button
+        ><button class="mini" id="rmImg">Remove photo</button>
+      </div>
+      <input id="file" type="file" accept="image/*" hidden />
+      <div class="act"><button class="go" id="done">Done</button></div>
+    </dialog>
+    <script src="script.js" defer></script>
+  </body>
+</html>
